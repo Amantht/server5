@@ -162,5 +162,24 @@ app.get('/show_one_stu',(req,res)=>{
          col.updateOne({stu_id:2100032607},doc)
          res.send("Updated Succesfully")
         })
+          //inserting document
+
+        app.post('/insert_student',(req,res)=>{
+          col =db.collection("Exam")
+            const doc={stu_name:"Aman",stu_dept:"CSE-H",stu_address:"KLU-Hostel" }
+          
+         col.insertOne(doc)
+         res.send("Inserted Succesfully")
+          })
+            /// 
+          app.delete('/delete_student',(req,res)=>{
+            col=db.collection("Exam")
+            //  const doc={
+            //     $set:{stu_dept:"BT",stu_address:"Vaddeswaram"
+            //     }
+            //  }
+             col.deleteOne({stu_id:2100032607})
+             res.send("Deleted Succesfully")
+            })
 app.listen(8082)
 //localhost:8081
