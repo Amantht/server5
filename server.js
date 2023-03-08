@@ -152,6 +152,15 @@ app.get('/show_one_stu',(req,res)=>{
         find().catch(console.dir)
       })
 
-  
+      /////exp 8
+      app.patch('/update_stu',(req,res)=>{
+        col=db.collection("Exam")
+         const doc={
+            $set:{stu_dept:"BT",stu_address:"Vaddeswaram"
+            }
+         }
+         col.updateOne({stu_id:2100032607},doc)
+         res.send("Updated Succesfully")
+        })
 app.listen(8082)
 //localhost:8081
