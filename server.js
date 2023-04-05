@@ -120,7 +120,7 @@ app.get('/show_one_stu',(req,res)=>{
   app.get('/show_all',(req,res)=>{
     async function find(){
       try{
-        const result=await col.find().toArray([])
+        const result=await col.find().toArray()
         console.log(result)
         if(result==null)
         {
